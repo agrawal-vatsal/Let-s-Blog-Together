@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login" class="btn btn-primary">
+    </form>
+    {% if invalid %}
+        <div class="alert alert-danger" role="alert">
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            Invalid Username and Password
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div class="centerstage">
+        SignUp
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ pform.as_p }}
+            <input type="submit" class="btn btn-primary" value="SignUp">
+        </form>
+    </div>
+{% endblock %}
